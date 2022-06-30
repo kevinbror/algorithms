@@ -10,26 +10,18 @@
   index's. Continue looping through until all values are in ascending order
 */
 
-function loopArrayWithSwap(array, didSwap = false) {
-  for (let i = 0; i < nums.length; ++i) {
-    const first = nums[i];
-    const second = nums[i + 1];
-    if (first > second) {
-      // swap
-      nums[i] = second;
-      nums[i + 1] = first;
-    }
-  }
-  return nums;
-}
-
 function bubbleSort(nums, iterations = 0) {
   // code goes here
   let swapped = false;
-  for (let current = 0; current < nums.length - iterations; ++current) {
+  const limit = nums.length - iterations - 1;
+  for (let current = 0; current < limit; ++current) {
     const next = current + 1;
     const first = nums[current];
     const second = nums[next];
+    // console.log({ second });
+    if (!second) {
+      console.log("undefined!");
+    }
     if (first > second) {
       // swap
       swapped = true;

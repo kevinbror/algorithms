@@ -13,3 +13,11 @@
 - space complexity: constant O(n) - we operate on the same array the whole time mutating it
 - stable? yes, we only swap when there is inequality
 - destructive? yes, it mutates the input
+
+# Insert sort
+
+- ok for mostly sorted lists
+- time complexity: quadratic O(n sq) - worst case reverse sorted list
+- space complexity: constant O(n) - we operate on the same array the whole time mutating it
+- stable? yes, we only swap when there is inequality
+- destructive? yes, it mutates the input
