@@ -21,3 +21,8 @@
 - space complexity: constant O(n) - we operate on the same array the whole time mutating it
 - stable? yes, we only swap when there is inequality
 - destructive? yes, it mutates the input
+
+# Recursion
+- often less performan
+- fibonacci is was faster with iteration
+- Keys - what's the base case? where do I recurse?
