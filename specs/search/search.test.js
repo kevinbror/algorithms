@@ -5,15 +5,34 @@
 
 function linearSearch(id, array) {
   // code goes here
+  for (let i = 0; i < array.length; ++i) {
+    if (array[i].id === id) {
+      return array[i];
+    }
+  }
 }
 
 function binarySearch(id, array) {
   // code goes here
+  // get mid point
+  const position = Math.floor(array.length / 2);
+  const currentId = array[position].id;
+  if (currentId === id) {
+    return array[position];
+  }
+  else if (currentId > id) {
+    // search left
+    return binarySearch(id, array.slice(0, position));
+  }
+  else {
+    // search right
+    return binarySearch(id, array.slice(position + 1));
+  }
 }
 
 // unit tests
 // do not modify the below code
-test.skip("linear search", function () {
+test("linear search", function () {
   const lookingFor = { id: 5, name: "Brian" };
   expect(
     linearSearch(5, [
@@ -35,7 +54,7 @@ test.skip("linear search", function () {
   ).toBe(lookingFor);
 });
 
-test.skip("binary search", function () {
+test("binary search", function () {
   const lookingFor = { id: 23, name: "Brian" };
   expect(
     binarySearch(23, [

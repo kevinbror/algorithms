@@ -38,5 +38,21 @@
 - can be done in the passed in array giving optimal space complexity (1)
 - better space complexity than merge sort
 - if the pivot is the greatest it can be O (n squared) since we lose the benefit of recursion. Sorted arrays are terrible. Dig into this to better understand why this ends up comparing every element against every element
-- can optimize by finding a better pivot and get O (log n) (quick sort 3)
+- can optimize  finding a better pivot and get O (log n) (quick sort 3)
     - there are other variations like this too
+- time complexity: best - O (log n) / worst - O (n squared) [with sorted array]
+- space complexity: depends. Can be 1, n, log n depending on implementation
+- stable: no
+- destructive: depends on implementation
+- See https://www.geeksforgeeks.org/quick-sort/ for in place sort example
+
+# Radix sort
+- other name: bucket sort
+- non comparison sort
+- works well for large numbers over a large range
+- time complexity: O (n * k)
+
+# Binary search
+- works on sorted arrays
+- time complexity: O (log n)
+- space complexity: n
