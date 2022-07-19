@@ -31,7 +31,6 @@ const mergeSort = (nums) => {
   const half = Math.floor(nums.length / 2);
   const left = nums.slice(0, half);
   const right = nums.slice(half);
-  console.log({ left, right });
   // get to base case of 1
   return merge(mergeSort(left), mergeSort(right));
   // merge
