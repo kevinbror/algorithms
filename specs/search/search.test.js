@@ -10,24 +10,34 @@ function linearSearch(id, array) {
       return array[i];
     }
   }
+  return null;
 }
 
 function binarySearch(id, array) {
   // code goes here
+  if (!array.length) {
+    return null;
+  }
   // get mid point
   const position = Math.floor(array.length / 2);
+  console.log({ position, array });
   const currentId = array[position].id;
   if (currentId === id) {
     return array[position];
   }
   else if (currentId > id) {
     // search left
-    return binarySearch(id, array.slice(0, position));
+    const left = array.slice(0, position);
+    console.log({ left });
+    return binarySearch(id, left);
   }
   else {
     // search right
-    return binarySearch(id, array.slice(position + 1));
+    const right = array.slice(position + 1);
+    console.log({ right });
+    return binarySearch(id, right);
   }
+  return null;
 }
 
 // unit tests
@@ -74,4 +84,24 @@ test("binary search", function () {
       { id: 24, name: "Ben" }
     ])
   ).toBe(lookingFor);
+});
+
+test("binary search not found", function () {
+  expect(
+    binarySearch(2, [
+      { id: 1, name: "Sam" },
+      { id: 3, name: "Sarah" },
+      { id: 5, name: "John" },
+      { id: 6, name: "Burke" },
+      { id: 10, name: "Simona" },
+      { id: 12, name: "Asim" },
+      { id: 13, name: "Niki" },
+      { id: 15, name: "Aysegul" },
+      { id: 17, name: "Kyle" },
+      { id: 18, name: "Jem" },
+      { id: 19, name: "Marc" },
+      { id: 21, name: "Chris" },
+      { id: 24, name: "Ben" }
+    ])
+  ).toBe(null);
 });
