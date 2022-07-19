@@ -56,3 +56,11 @@
 - works on sorted arrays
 - time complexity: O (log n)
 - space complexity: n
+
+# ArrayList 
+- good for adding to end, lookups
+- bad for deletions/inserts in the middle/beginning
+- lookup O(1) constant
+- deletion O(N)
+
+# LinkedList
