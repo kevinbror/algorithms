@@ -23,28 +23,11 @@ class Tree {
   }
 
   add (value) {
-    const node = new Node(value);
     if (!this.root) {
-      this.root = node;
+      this.root = new Node(value);
     }
-    // compare the root value to this value
-    // if its equal do nothing
-    else if (value === this.root.value) {
-      return;
-    }
-    // if this value is less put it in the left sub tree
-    else if (value < this.root.value && !this.root.left) {
-      this.root.left = node;
-    }
-    else if (value < this.root.value && this.root.left) {
-      this.root.left.add(value);
-    }
-    // if this value is more put it in the right sub tree
-    else if (value > this.root.value && !this.root.right) {
-      this.root.right = node;
-    }
-    else if (value > this.root.value && this.root.right) {
-      this.root.right.add(value);
+    else {
+      this.root.add(value);
     }
   }
   toObject () {
