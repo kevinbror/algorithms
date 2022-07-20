@@ -1,0 +1,6 @@
+- understand in place quick sort https://www.geeksforgeeks.org/quick-sort/
+- review merge sort
+- review linked lists
+- review AVL trees
+- look at doubly linked lists
+- look at red/black trees
