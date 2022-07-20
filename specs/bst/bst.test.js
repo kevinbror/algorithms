@@ -18,16 +18,74 @@ right - Node/object - the right node which itself may be another tree
 
 class Tree {
   // code goes here
+  constructor () {
+    this.root = null;
+  }
+
+  add (value) {
+    const node = new Node(value);
+    if (!this.root) {
+      this.root = node;
+    }
+    // compare the root value to this value
+    // if its equal do nothing
+    else if (value === this.root.value) {
+      return;
+    }
+    // if this value is less put it in the left sub tree
+    else if (value < this.root.value && !this.root.left) {
+      this.root.left = node;
+    }
+    else if (value < this.root.value && this.root.left) {
+      this.root.left.add(value);
+    }
+    // if this value is more put it in the right sub tree
+    else if (value > this.root.value && !this.root.right) {
+      this.root.right = node;
+    }
+    else if (value > this.root.value && this.root.right) {
+      this.root.right.add(value);
+    }
+  }
+  toObject () {
+    return this.root;
+  }
 }
 
 // you might consider using a Node class too
-// class Node {
-//   // code maybe goes here
-// }
+class Node {
+  // code maybe goes here
+  constructor (value) {
+    this.value = value;
+    this.left = null;
+    this.right = null;
+  }
+
+  add (value) {
+    const node = new Node(value);
+    if (value === this.value) {
+      return;
+    }
+    // if this value is less put it in the left sub tree
+    else if (value < this.value && !this.left) {
+      this.left = node;
+    }
+    else if (value < this.value && this.left) {
+      this.left.add(value);
+    }
+    // if this value is more put it in the right sub tree
+    else if (value > this.value && !this.right) {
+      this.right = node;
+    }
+    else if (value > this.value && this.right) {
+      this.right.add(value);
+    }
+  }
+}
 
 // unit tests
 // do not modify the below code
-describe.skip("Binary Search Tree", function () {
+describe("Binary Search Tree", function () {
   it("creates a correct tree", () => {
     const nums = [3, 7, 4, 6, 5, 1, 10, 2, 9, 8];
     const tree = new Tree();

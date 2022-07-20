@@ -64,3 +64,12 @@
 - deletion O(N)
 
 # LinkedList
+- good for insertion/deletion. not great for lookups
+
+# Binary search trees (BST)
+- Always ordered
+- Binary (two children per node at most)
+- Use case is searching
+- left node children are always less than any parent, right node are always greater
+- lookups in BSTs are O (log n)
+- DBs (like mongo use trees to store indexes)
