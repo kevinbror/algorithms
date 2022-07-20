@@ -80,7 +80,13 @@
 - defined as unbalanced if one or more nodes have a child height difference of 2 or more. i.e. in 7 - 8 - 9, 7 has two right children (8 and 9) and no left children. A left rotation would balance this
 - adding logic is the same as BST. Just need to track height of each node and implement balancing. 
 
-# Traversals
+# Traversals - Depth first
 - Preorder traversal - get all node values in the order they occur depth first left to right
+    - helpful to copy a tree
 - Inorder - sorted: same as preorder but only add when we find the next lowest
-- Postorder - 
+- Postorder - Gathers bottom most nodes first. helpful to delete items in a tree
+- When to use depth first vs breadth first?
+    - good for nearness. When multiple values exist it can find the closest
+    - pathfinding / graphs use breadth first traversal a lot
+
+# Traversals - Breadth first
