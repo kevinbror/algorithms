@@ -64,7 +64,8 @@ class Node {
     }
     // if this value is more put it in the right sub tree
     else if (value > this.value) {
-      this._addOrSetChild(value, 'right');    }
+      this._addOrSetChild(value, 'right');    
+    }
   }
 }
 

@@ -73,3 +73,8 @@
 - left node children are always less than any parent, right node are always greater
 - lookups in BSTs are O (log n)
 - DBs (like mongo use trees to store indexes)
+- Don't use basic BSTs in production because you can hit wortcase scenarios with unbalanced trees. AVLs and red/black trees (self balancing) mitigate this
+
+# AVL trees
+- still tend not to see these in prod. but it's a simple example of a self balancing tree
+- defined as unbalanced if one or more nodes have a child height difference of 2 or more. i.e. in 7 - 8 - 9, 7 has two right children (8 and 9) and no left children. A left rotation would balance this
