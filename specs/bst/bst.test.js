@@ -44,25 +44,27 @@ class Node {
     this.right = null;
   }
 
+  _addOrSetChild (value, orientation) {
+    if (!this[orientation]) {
+      this[orientation] = new Node(value);
+    }
+    else {
+      this[orientation].add(value);
+    }
+  }
+
   add (value) {
     const node = new Node(value);
     if (value === this.value) {
       return;
     }
     // if this value is less put it in the left sub tree
-    else if (value < this.value && !this.left) {
-      this.left = node;
-    }
-    else if (value < this.value && this.left) {
-      this.left.add(value);
+    else if (value < this.value) {
+      this._addOrSetChild(value, 'left');
     }
     // if this value is more put it in the right sub tree
-    else if (value > this.value && !this.right) {
-      this.right = node;
-    }
-    else if (value > this.value && this.right) {
-      this.right.add(value);
-    }
+    else if (value > this.value) {
+      this._addOrSetChild(value, 'right');    }
   }
 }
 
