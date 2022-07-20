@@ -118,7 +118,7 @@ class Node {
 
   rotateRR (isDouble) {
     // call if left child is heavy
-    console.log({ isDouble, left: this.left, right: this.right });
+    console.log({ isDouble, 'left left': this.left?.left, 'right right': this.right?.right });
     const valueBefore = this.value;
     const leftBefore = this.left;
     this.value = this.right.value;
@@ -132,7 +132,7 @@ class Node {
   }
   rotateLL (isDouble) {
     // call when right child is heavy
-    console.log({ isDouble, left: this.left, right: this.right });
+    console.log({ isDouble, 'left left': this.left?.left, 'right right': this.right?.right });
     const valueBefore = this.value;
     const rightBefore = this.right;
     this.value = this.left.value;

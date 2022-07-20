@@ -76,5 +76,11 @@
 - Don't use basic BSTs in production because you can hit wortcase scenarios with unbalanced trees. AVLs and red/black trees (self balancing) mitigate this
 
 # AVL trees
-- still tend not to see these in prod. but it's a simple example of a self balancing tree
+- still tend not to see these in prod. red/black are better. but it's a simple example of a self balancing tree
 - defined as unbalanced if one or more nodes have a child height difference of 2 or more. i.e. in 7 - 8 - 9, 7 has two right children (8 and 9) and no left children. A left rotation would balance this
+- adding logic is the same as BST. Just need to track height of each node and implement balancing. 
+
+# Traversals
+- Preorder traversal - get all node values in the order they occur depth first left to right
+- Inorder - sorted: same as preorder but only add when we find the next lowest
+- Postorder - 
