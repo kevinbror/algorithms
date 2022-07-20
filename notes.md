@@ -3,7 +3,7 @@
 - O(1) constant time
 - O(n) linear time
 - O(n sq) quadratic time
-- O(log n) logrithmic time [takes longer for longer input but the increase proportionally decreases. Does it approach parallel at infinity?]
+- O(n log n) logrithmic time [takes longer for longer input but the increase proportionally decreases. Does it approach parallel at infinity?]
 
 # Bubble Sort
 
@@ -29,7 +29,7 @@
 
 # Merge Sort
 - alg executes in the same time complexity no matter how sorted or unsorted the array is
-- time complexity: logarithmic O(log n)
+- time complexity: logarithmic O(n log n)
 - space complexity: linear O(n * k)
 - stable: yes
 - destructive: no
@@ -38,10 +38,10 @@
 - can be done in the passed in array giving optimal space complexity (1)
 - better space complexity than merge sort
 - if the pivot is the greatest it can be O (n squared) since we lose the benefit of recursion. Sorted arrays are terrible. Dig into this to better understand why this ends up comparing every element against every element
-- can optimize  finding a better pivot and get O (log n) (quick sort 3)
+- can optimize  finding a better pivot and get O (n log n) (quick sort 3)
     - there are other variations like this too
-- time complexity: best - O (log n) / worst - O (n squared) [with sorted array]
-- space complexity: depends. Can be 1, n, log n depending on implementation
+- time complexity: best - O (n log n) / worst - O (n squared) [with sorted array]
+- space complexity: depends. Can be 1, n, n log n depending on implementation
 - stable: no
 - destructive: depends on implementation
 - See https://www.geeksforgeeks.org/quick-sort/ for in place sort example
@@ -54,7 +54,7 @@
 
 # Binary search
 - works on sorted arrays
-- time complexity: O (log n)
+- time complexity: O (n log n)
 - space complexity: n
 
 # ArrayList 
@@ -71,7 +71,7 @@
 - Binary (two children per node at most)
 - Use case is searching
 - left node children are always less than any parent, right node are always greater
-- lookups in BSTs are O (log n)
+- lookups in BSTs are O (n log n)
 - DBs (like mongo use trees to store indexes)
 - Don't use basic BSTs in production because you can hit wortcase scenarios with unbalanced trees. AVLs and red/black trees (self balancing) mitigate this
 
@@ -90,3 +90,12 @@
     - pathfinding / graphs use breadth first traversal a lot
 
 # Traversals - Breadth first
+- good for nearness. When multiple values exist it can find the closest
+    - pathfinding / graphs use breadth first traversal a lot
+
+# Heap sort
+- Heap is an array representing and array like data structure. Some similarities to bin trees
+- Heaps used for priority queues
+- 2n + 1 for left child and 2n + 2 for right
+- space complexity - constant
+- time complexity - O (n log n)
