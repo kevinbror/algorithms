@@ -99,3 +99,7 @@
 - 2n + 1 for left child and 2n + 2 for right
 - space complexity - constant
 - time complexity - O (n log n)
+
+# Graphs
+- similar to trees but no root
+- use cases: social network, AI, 
