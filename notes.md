@@ -102,4 +102,7 @@
 
 # Graphs
 - similar to trees but no root
-- use cases: social network, AI, 
+- use cases: social network, AI
+
+# Breadth first search
+- 

@@ -3,31 +3,31 @@ const breadthFirstTraverse = (queue, array) => {
 
   // dequeue item, enqueue item's children, process item
   // iterative
-  // while (queue.length) {
-  //   const current = queue.shift();
-  //   if (current.left) {
-  //     queue.push(current.left);
-  //   }
-  //   if (current.right) {
-  //     queue.push(current.right);
-  //   }
-  //   array.push(current.value);
-  // }
-  // return array;
+  while (queue.length) {
+    const current = queue.shift();
+    if (current.left) {
+      queue.push(current.left);
+    }
+    if (current.right) {
+      queue.push(current.right);
+    }
+    array.push(current.value);
+  }
+  return array;
 
   // recursive
-  if (!queue.length) {
-    return array;
-  }
-  const current = queue.shift();
-  if (current.left) {
-    queue.push(current.left);
-  }
-  if (current.right) {
-    queue.push(current.right);
-  }
-  array.push(current.value);
-  return breadthFirstTraverse(queue, array);
+  // if (!queue.length) {
+  //   return array;
+  // }
+  // const current = queue.shift();
+  // if (current.left) {
+  //   queue.push(current.left);
+  // }
+  // if (current.right) {
+  //   queue.push(current.right);
+  // }
+  // array.push(current.value);
+  // return breadthFirstTraverse(queue, array);
 };
 
 // unit tests
