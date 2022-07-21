@@ -90,22 +90,22 @@ const getNeighbors = (visited, x, y) => {
   const neighbors = [];
 
   if (y - 1 >= 0 && !visited[y - 1][x].closed) {
-    // left
+    // up
     neighbors.push(visited[y - 1][x]);
   }
 
-  if (y + 1 < visited[0].length && !visited[y + 1][x].closed) {
-    // right
+  if (y + 1 < visited.length && !visited[y + 1][x].closed) {
+    // down
     neighbors.push(visited[y + 1][x]);
   }
 
   if (x - 1 >= 0 && !visited[y][x - 1].closed) {
-    // up
+    // left
     neighbors.push(visited[y][x - 1]);
   }
 
-  if (x + 1 < visited.length && !visited[y][x + 1].closed) {
-    // down
+  if (x + 1 < visited[0].length && !visited[y][x + 1].closed) {
+    // right
     neighbors.push(visited[y][x + 1]);
   }
 
@@ -119,6 +119,16 @@ const getNeighbors = (visited, x, y) => {
 // unit tests
 // do not modify the below code
 describe("pathfinding – happy path", function () {
+  const fourByThree = [
+    [2, 0, 0],
+    [0, 0, 0],
+    [0, 0, 0],
+    [0, 0, 2]
+  ];
+  it("should solve a 4x3 maze", () => {
+    expect(findShortestPathLength(fourByThree, [0, 0], [2, 3])).toEqual(5);
+  });
+
   const fourByFour = [
     [2, 0, 0, 0],
     [0, 0, 0, 0],
